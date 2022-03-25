@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{4146A603-75F8-9571-52DC-D6142A02E94E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/Heart.cs">
+    <Files>
+      <File FileName="Assets/_Scripts/Coin.cs" Line="27" Column="6" />
+      <File FileName="Assets/_Scripts/Heart.cs" Line="20" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Restlessness" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="_Scripts" expanded="True">
+                <Node name="Heart.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50eab48f-b344-41b9-9134-4d0e22bc94df" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

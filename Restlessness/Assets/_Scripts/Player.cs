@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     private CharacterController _controller;
 
+    public float playerLife = 100; 
+    
     [SerializeField]
     private float _speed =3.5f;
     [SerializeField]
@@ -30,7 +32,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _weapon;
 
+    [SerializeField]
+    private GameObject _knife;
 
+    public bool knifeActive=false;
+
+    public bool weaponActive=true;
+
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -44,19 +53,20 @@ public class Player : MonoBehaviour
 
     }
 
+  
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButton(0) && currentAmmo > 0)
         { 
-            
+            if(knifeActive==false)
             Shoot();
         }
         else
-        { 
-            _muzzleFlash.SetActive(false);  
-            _weaponAudio.Stop();
-        }
+            { 
+                _muzzleFlash.SetActive(false);  
+                _weaponAudio.Stop();
+            }
 
         if(Input.GetKeyDown(KeyCode.R) && _isReLoading == false)
         {
@@ -76,7 +86,17 @@ public class Player : MonoBehaviour
             _uiManager.CollectCoin();
         }
         
-        
+        if(Input.GetKeyDown(KeyCode.L))
+        {    
+            if(weaponActive==false)
+                 EnableWeapons();
+            else
+                {
+                EnableKnife();
+
+                }
+        }
+
     }
 
     void Shoot()
@@ -128,9 +148,41 @@ public class Player : MonoBehaviour
         _controller.Move(velocity * Time.deltaTime);
     }
 
-    public void EnableWeapons()
+    public void RestLife(float injury)
     {
-        _weapon.SetActive(true);        
+        playerLife = playerLife - injury;
+        if(playerLife<=0)
+        {
+         GameManager.Instance.GameOver();
+        }
     }
 
+
+
+    public void EnableWeapons()
+    {
+        if(weaponActive == false)
+        {
+            Debug.Log("Cambia a arma");
+            _weapon.SetActive(true);
+            _knife.SetActive(false);
+            knifeActive = false;
+            weaponActive = true;
+            
+        }
+                   
+    }
+
+    public void EnableKnife()
+    {
+        if (knifeActive == false)
+        {
+            Debug.Log("Cambia a cuchillo");
+            _knife.SetActive(true);
+            _weapon.SetActive(false);
+            knifeActive = true;
+            weaponActive = false;
+        }
+
+    }    
 }
