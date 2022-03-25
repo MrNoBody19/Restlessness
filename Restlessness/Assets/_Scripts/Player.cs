@@ -184,5 +184,21 @@ public class Player : MonoBehaviour
             weaponActive = false;
         }
 
-    }    
+    }
+    public void AddHeatl(float heal)
+    {
+        playerLife = playerLife + heal;
+        if (playerLife > 100)
+        {
+            playerLife = 100f;
+        }
+    }
+    public void RestHeatl(float heal)
+    {
+        playerLife = playerLife - heal;
+        if (playerLife < 100)
+        {
+            Debug.Log("Game Over");
+        }
+    }
 }

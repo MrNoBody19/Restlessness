@@ -107,6 +107,7 @@
     <Compile Include="Assets/PowerUp/Scripts/PowerUpRotation.cs" />
     <Compile Include="Assets/PowerUp/Scripts/ScaleParticles.cs" />
     <Compile Include="Assets/PowerUp/Scripts/health.cs" />
+    <Compile Include="Assets/_Scripts/Trampacuchilla.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
