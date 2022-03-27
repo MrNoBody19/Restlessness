@@ -17,8 +17,6 @@ public class Trampacuchilla : MonoBehaviour
             Player player = other.GetComponent<Player>();
             player.RestHeatl(healtQTY);
             AudioSource.PlayClipAtPoint(_healthsound, transform.position, 1f);
-            Player.
-            Destroy(this.gameObject);
         }
     }
 }
